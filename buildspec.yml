@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - yum update -y
+      - yum install -y gcc-c++ make
+      - curl -sL https://rpm.nodesource.com/setup_19.x
+      - yum install -y nodejs
+      - node -v
+      - npm -v
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - echo Running unit tests
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'

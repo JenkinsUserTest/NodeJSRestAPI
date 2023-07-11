@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/NodeJSEmployeeRESTAPI
+hooks:
+  BeforeInstall:
+    - location: Scripts/BeforeInstallHook.sh
+  AfterInstall:
+    - location: Scripts/AfterInstallHook.sh
+      timeout: 180
+  ApplicationStart:
+    - location: Scripts/StartApp.sh
+      timeout: 3600
