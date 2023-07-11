@@ -2,7 +2,8 @@ Resources:
   SampleNodejsDeploy:
     Type: AWS::EC2::Instance
     Properties:
-      Parameters:
+      InstanceType: t2.micro
+      ImageId: ami-014d05e6b24240371
       UserData: 
         Fn::Base64:
           |
